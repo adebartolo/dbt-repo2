@@ -7,6 +7,13 @@ models:
         tests:
           - unique
           - not_null
+      - name: first_name
+        tests:
+          - not_null
+      - name: last_name
+        tests:
+          - not_null
+
   - name: stg_orders
     columns: 
       - name: order_id
