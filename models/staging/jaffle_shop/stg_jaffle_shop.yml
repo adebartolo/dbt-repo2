@@ -10,9 +10,11 @@ models:
           - unique
           - not_null
       - name: first_name
+        description: Each customer has a first name
         tests:
           - not_null
       - name: last_name
+        description: Each customer has a last name initial
         tests:
           - not_null
 
@@ -24,6 +26,8 @@ models:
         tests:
           - unique
           - not_null
+      - name: order_date
+        description: "{{ doc('order_date') }}"
       - name: status
         description: "{{ doc('order_status') }}"
         tests:
@@ -35,6 +39,7 @@ models:
                 - placed
                 - return_pending
       - name: customer_id
+        description: Each customer has a unique customer ID
         tests:
           - relationships:
               to: ref('stg_customers')

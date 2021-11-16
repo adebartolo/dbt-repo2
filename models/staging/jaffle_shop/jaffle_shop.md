@@ -11,3 +11,9 @@ One of the following values:
 | returned       | Item has been returned                           |
 
 {% enddocs %}
+
+{% docs order_date %}
+	
+Order_date is in the format: YYY-MM-DD
+
+{% enddocs %}
