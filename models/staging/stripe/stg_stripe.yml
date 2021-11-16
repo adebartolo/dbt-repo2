@@ -9,7 +9,7 @@ models:
       - name: order_id
         description: Each order has a unique ID
       - name: payment_method
-        status: Customers can use payment methods such as credit card, bank transfer, coupon, or gift card.
+        description: Customers can use payment methods such as credit card, bank transfer, coupon, or gift card.
       - name: status
         description: The status can be a success or a fail.
       - name: created_at

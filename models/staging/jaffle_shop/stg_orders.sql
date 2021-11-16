@@ -6,7 +6,9 @@ with orders as (
         order_date,
         status
 
-    from `dbt-tutorial`.jaffle_shop.orders
+   -- from `dbt-tutorial`.jaffle_shop.orders
+    from {{ source('jaffle_shop', 'orders') }}
 )
 
 select * from orders
+
