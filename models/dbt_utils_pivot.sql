@@ -1,10 +1,8 @@
-{{ config (
-    materialized="table"
-
-)}}
-
 select
-{{ dbt_utils.star(from=ref('stg_payment'), except=["payment_method", "status"]) }}
+  status,
+  {{ dbt_utils.pivot(
+      'payment_method',
+      dbt_utils.get_column_values(ref('stg_payment'), 'payment_method')
+  ) }}
 from {{ ref('stg_payment') }}
-where status = 'success'
-
+group by status
