@@ -1,3 +1,8 @@
+{{ config (
+    materialized="table"
+
+)}}
+
 select
   status,
   {{ dbt_utils.pivot(
